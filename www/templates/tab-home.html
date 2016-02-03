@@ -1,0 +1,25 @@
+<ion-view view-title="Inicio">
+  <ion-content class="padding" ng-controller="HomeCtrl">
+
+      <div class="list">
+          <label class="item item-input">
+              <span class="input-label">Message: </span>
+              <input type="text" ng-model="newMessage">
+          </label>
+      </div>
+      <div>
+          <button class="button button-block" ng-click="save(newMessage)">
+              Save
+          </button>
+          <button class="button button-block" ng-click="load()">
+              Load  
+          </button>
+          <p>{{ statusMessage }}</p>
+      </div>
+      <!--
+          <button class="button" ng-click="insert('Alberto','Gomez')">Insert</button>
+    <button class="button" ng-click="select('Gomez')">Select</button>
+          -->
+    
+  </ion-content>
+</ion-view>
