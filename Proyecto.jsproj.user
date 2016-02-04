@@ -6,4 +6,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|iOS'">
     <DebuggerFlavor>iOSEmulatoriPadAir</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">
+    <DebuggerFlavor>AndroidEmulator</DebuggerFlavor>
+    <AndroidEmulatorID>5C150BF2-2D13-4F82-B7DA-9481CDA45079;VS Emulator 10.1" Lollipop (5.1.1) XHDPI Tablet</AndroidEmulatorID>
+  </PropertyGroup>
 </Project>
