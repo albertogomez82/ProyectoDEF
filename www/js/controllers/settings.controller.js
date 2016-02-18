@@ -14,7 +14,7 @@ function SettingsCtrl($scope, $ionicPopup, $cordovaSQLite) {
         });
         confirmPopup.then(function (res) {
             if (res) {
-                $cordovaSQLite.deleteDB("nextflow.db");
+                $cordovaSQLite.deleteDB("bbdd.db");
                 console.log('You are sure');
             } else {
                 console.log('You are not sure');
@@ -30,7 +30,8 @@ function SettingsCtrl($scope, $ionicPopup, $cordovaSQLite) {
         $cordovaSQLite.execute(db, query, []).then(function (res) {
             if (res.rows.length > 0) {
                 for (var i = 0; i < res.rows.length; i++) {
-                    console.log("SELECTED -> " + res.rows.item(i));
+                    console.log("SELECTED -> " + res.rows.item(i).CODIGO);
+                    console.log("SELECTED -> " + res.rows.item(i).codigo);
                 }
             } else {
                 console.log("No results found");
