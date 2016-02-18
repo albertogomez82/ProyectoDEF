@@ -16,8 +16,17 @@ function run($ionicPlatform, $cordovaSQLite) {
             StatusBar.styleDefault();
         }
 
-        db = $cordovaSQLite.openDB("nextflow.db");
-        $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS Messages (id INTEGER PRIMARY KEY AUTOINCREMENT, message TEXT)');
+
+        //window.sqlitePlugin.openDatabase({ name: "bbdd.db", createFromLocation: 1 });
+        window.plugins.sqlDB.copy("bbdd.db", 0, function () {
+            db =                 $cordovaSQLite.openDB("bbdd.db");
+        }, function (error) {
+            console.error("Se ha producido un error copiando la base de datos: " + error);
+            db = $cordovaSQLite.openDB("bbdd.db");
+        });
+
+        //db = $cordovaSQLite.openDB("nextflow.db");
+        //$cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS Messages (id INTEGER PRIMARY KEY AUTOINCREMENT, message TEXT)');
 
         //agregado
         //db = $cordovaSQLite.openDB({ name: "my.db" });

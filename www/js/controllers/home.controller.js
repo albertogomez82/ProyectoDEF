@@ -3,7 +3,7 @@
     .controller('HomeCtrl', HomeCtrl);
 
 function HomeCtrl($scope, $cordovaSQLite) {
-    
+    //window.sqlitePlugin.openDatabase({ name: "bbdd.db", createFromLocation: 1 });
     $scope.save = function (newMessage) {
     //function save(newMessage) {
         $cordovaSQLite.execute(db, 'INSERT INTO Messages (message) VALUES (?)', [newMessage])
